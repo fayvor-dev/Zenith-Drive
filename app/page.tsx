@@ -3,6 +3,7 @@ import SectionHeading from "@/components/SectionHeading";
 import AnimatedSection from "@/components/AnimatedSection";
 import VehicleCard from "@/components/VehicleCard";
 import Button from "@/components/Button";
+import Marquee from "@/components/Marquee";
 import { getFeaturedVehicles, vehicles } from "@/lib/vehicles";
 import { ShieldCheck, Globe2, HandCoins, Wrench } from "lucide-react";
 import Image from "next/image";
@@ -14,6 +15,18 @@ export default function HomePage() {
   return (
     <>
       <Hero featured={heroFeatured} />
+
+      <div className="bg-brown text-butter/80 py-5 border-y border-butter/10">
+        <Marquee
+          items={[
+            "Peak Performance",
+            "Unmatched Luxury",
+            "Mercedes-Benz",
+            "Lexus",
+            "Benin City",
+          ]}
+        />
+      </div>
 
       {/* Featured Inventory */}
       <section className="py-24 md:py-32 px-6 md:px-10 max-w-7xl mx-auto">
