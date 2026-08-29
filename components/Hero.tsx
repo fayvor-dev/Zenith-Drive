@@ -4,7 +4,6 @@ import Image from "next/image";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Button from "./Button";
-import TopoLines from "./TopoLines";
 import { Vehicle, formatNaira } from "@/lib/vehicles";
 
 const headline = "THE ROAD IS YOURS.".split(" ");
@@ -47,9 +46,6 @@ export default function Hero({ featured }: { featured: Vehicle }) {
         transition={{ duration: 2 }}
         className="absolute -top-40 -right-40 w-[560px] h-[560px] rounded-full bg-butter/10 blur-[120px]"
       />
-
-      {/* Signature topo motif, dimmed over footage */}
-      <TopoLines className="absolute inset-0 w-full h-full opacity-70" />
 
       {/* Drifting light sweep for extra motion texture */}
       <motion.div
