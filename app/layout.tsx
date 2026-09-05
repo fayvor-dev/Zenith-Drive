@@ -5,6 +5,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import ScrollProgress from "@/components/ScrollProgress";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -39,6 +40,9 @@ export const metadata: Metadata = {
     "Mercedes-Benz Nigeria",
     "Lexus Nigeria",
   ],
+  verification: {
+    google: process.env.NEXT_PUBLIC_GSC_VERIFICATION || undefined,
+  },
 };
 
 export default function RootLayout({
@@ -49,6 +53,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fraunces.variable} ${manrope.variable} ${spaceMono.variable}`}>
       <body className="font-body bg-cream text-charcoal antialiased">
+        <GoogleAnalytics />
         <ScrollProgress />
         <Navbar />
         <main>{children}</main>
